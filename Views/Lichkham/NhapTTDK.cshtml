@@ -1,0 +1,87 @@
+﻿@model WebAppYte.Models.DatLich
+
+@{ ViewBag.Title = "NhapTTDK";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var u = Session["user"] as WebAppYte.Models.BenhNhan; }
+
+
+<div id="nivoslider" class="slides nivoSlider">
+
+    <div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div>
+    <div class="nivo-slice" name="0" style="left: 0px; width: 1530px; height: 160px; opacity: 1; overflow: hidden;">
+        <div class="col-sm-12" style="position:absolute; width:1519px; height:auto; display:block !important; top:180px; left:200px;">
+            <nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/Home/Index">TRANG CHỦ</a><span class="separator"> &gt; </span><span class="last">ĐẶT LỊCH KHÁM</span></p></nav>
+        </div>
+
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal" style=" height: 100%;display: flex;  justify-content: center;">
+        <div class="ta-booking">
+
+            <div class="ta-frame__header">
+                <div class="ta-frame__header-title">ĐĂNG KÝ KHÁM BỆNH</div>
+            </div>
+            <div class="ta-frame__content">
+                <!---->
+
+                <a href="@Url.Action("Create", "LichKham")" style="color:black;">← Chọn lại ngày giờ hẹn khám</a>
+                <p style="margin-left:10px; color:white;">Điền đầy đủ thông tin người khám để tiết kiệm thời gian khi tới khám.</p>
+
+                <div class="" style="padding-left: 6px; padding-right: 6px;">
+                    <div class="el-form-item is-required">
+
+                        <label for="vendor" class="el-form-item__label" style="margin-left:10px; color:white;">Số điện thoại</label>
+                        <div class="">
+                            @Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="" style="padding-left: 6px; padding-right: 6px;">
+                    <div class="el-form-item is-required">
+                        <label for="vendor" class="el-form-item__label" style="margin-left:10px; color:white;">Họ tên</label>
+                        <div class="">
+                            @Html.EditorFor(model => model.hoten, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.hoten, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="" style="padding-left: 6px; padding-right: 6px;">
+                    <div class="el-form-item is-required">
+                        <label for="vendor" class="el-form-item__label" style="margin-left:10px; color:white;">Ngày sinh</label>
+                        <div class="">
+                            <input class="form-control text-box single-line" data-val="true" data-val-date="The field Bắt đầu must be a date." id="ngaysinh" name="ngaysinh" type="date" data-date="" data-date-format="DD/MMMM/YYYY" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ngaysinh" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="h5fail" style="color:red;">@ViewBag.Fail</h5>
+
+                <div class="" style="padding-left: 6px; padding-right: 6px;">
+                    <div class="el-form-item is-required">
+                        <label for="vendor" class="el-form-item__label" style="margin-left:10px; color:white;"></label>
+                        <div class="">
+                            <input type="submit" value="ĐẶT LỊCH NGAY" class="el-button expanded el-button--primary" style="background: #1f28af;width: 470px; height:100%;color:white;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="el-loading-mask" style="display: none;">
+                <div class="el-loading-spinner">
+                    <svg viewBox="25 25 50 50" class="circular">
+                        <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
+                    </svg><!---->
+                </div>
+            </div>
+        </div>
+    </div>
+}
