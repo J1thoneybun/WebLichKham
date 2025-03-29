@@ -2443,9 +2443,6 @@
     <Content Include="Views\Bacsi\Lichdaxacnhan.cshtml" />
     <Content Include="Views\ChuyenGiaBacSi\Search.cshtml" />
     <Content Include="Views\ChuyenGiaBacSi\ChuyenGiaBacSi.cshtml" />
-    <Content Include="Views\ChuyenGiaBacSi\TamAnhHaNoi.cshtml" />
-    <Content Include="Views\ChuyenGiaBacSi\TamAnhDaNang.cshtml" />
-    <Content Include="Views\ChuyenGiaBacSi\TamAnhSaiGon.cshtml" />
     <Content Include="Views\ChuyenGiaBacSi\DatLichHen.cshtml" />
     <Content Include="Views\BenhNhan\Details.cshtml" />
     <Content Include="Views\BenhNhan\Edit.cshtml" />
@@ -2460,7 +2457,6 @@
     <Content Include="Views\Hoidap\Edit.cshtml" />
     <Content Include="Views\Hoidap\Index.cshtml" />
     <Content Include="Views\Hoidap\ListAll.cshtml" />
-    <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\TinTuc\Index.cshtml" />
     <Content Include="Views\Home\Dangnhap.cshtml" />
     <Content Include="Views\Home\Dangky.cshtml" />

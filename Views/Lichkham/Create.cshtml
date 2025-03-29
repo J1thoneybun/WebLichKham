@@ -215,128 +215,134 @@
                 </div>
             </div>}
     </div>
-    
+
     //chon khoa xong se lay cac bac si ra
-    <script>
-        $('select[name=khoa]').change(function () {
-            var chinhanh = $('input[name=chinhanh]:checked').val(); // Lấy giá trị radio chinhanh
-            var khoa = $('select[name=khoa]').val(); // Lấy giá trị select khoa
-
-            $.ajax({
-                url: "/Admin/NguoiDungs/getNguoiDung",
-                type: "GET",
-                data: { tenKhoa: khoa, chinhanh: chinhanh }, // Truyền cả tenKhoa và chinhanh
-                success: function (results) {
-                    //console.log(results);
-                    $('select[name=bacsi]').empty();
-                    $('select[name=bacsi]').append('<option> Chọn bác sĩ </option>');
-
-                    $.each(results, function (index, result) {
-                        $('select[name=bacsi]').append('<option value="' + result.mand + '">' + result.hoten + '</option>');
-                    });
-                    $('select[name=ngaykham]').empty().append('<option> Chọn ngày khám </option>');
-                    $('select[name=cakham]').empty().append('<option> Chọn ca khám </option>');
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error occurred: " + error);
-                }
-            });
-        });
-        
-    </script>
-    //chon bac si xong, lay ngay kham ra
-    <script>
-        $(document).ready(function () {
-            $('select[name=bacsi]').change(function () {
-                var mand = $(this).val(); // Lấy mã bác sĩ từ dropdown
-
-                if (mand) { // Kiểm tra nếu mã bác sĩ tồn tại
-                    $.ajax({
-                        url: "/Admin/NguoiDungs/getNgayKham", // API lấy ngày khám
-                        type: "GET",
-                        data: { mand: mand }, // Gửi mã bác sĩ đến server
-                        success: function (results) {
-                            $('select[name=ngaykham]').empty(); // Làm trống dropdown ngày khám
-                            $('select[name=ngaykham]').append('<option> Chọn ngày khám </option>');
-                            $('select[name=cakham]').empty(); // Làm trống dropdown ngày khám
-                            $('select[name=cakham]').append('<option> Chọn ca  khám </option>');
-                            if (results.length > 0) {
-                                // Thêm các ngày khám vào dropdown
-                                $.each(results, function (index, ngaykham) {
-                                    $('select[name=ngaykham]').append('<option value="' + ngaykham + '">' + ngaykham + '</option>');
-                                });
-                            } else {
-                                alert("Không có ngày khám khả dụng cho bác sĩ này.");
-                            }
-                        },
-                        error: function () {
-                            alert("Có lỗi xảy ra khi tải ngày khám. Vui lòng thử lại.");
-                        }
-                    });
-                } else {
-                    $('select[name=ngaykham]').empty(); // Làm trống dropdown nếu không chọn bác sĩ
-                    $('select[name=ngaykham]').append('<option> Chọn ngày khám </option>');
-                }
-            });
-        });
-    </script>
-    //chon ngay kham xong lay cakham ra
-    <script>
-        $(document).ready(function () {
-            // Khi chọn ngày khám
-            $('select[name=ngaykham]').change(function () {
-                var mand = $('select[name=bacsi]').val(); // Lấy mã bác sĩ
-                var ngaykham = $(this).val(); // Lấy ngày khám được chọn
-
-                if (mand && ngaykham) { // Kiểm tra nếu bác sĩ và ngày khám được chọn
-                    $.ajax({
-                        url: "/Admin/NguoiDungs/getCaKham", // API lấy ca khám
-                        type: "GET",
-                        data: { mand: mand, ngaykham: ngaykham }, // Gửi mã bác sĩ và ngày khám đến server
-                        success: function (results) {
-                            $('select[name=cakham]').empty(); // Làm trống dropdown ca khám
-                            $('select[name=cakham]').append('<option> Chọn ca khám </option>');
-
-                            if (results.length > 0) {
-                                // Thêm các ca khám vào dropdown
-                                $.each(results, function (index, cakham) {
-                                    $('select[name=cakham]').append('<option value="' + cakham + '">' + cakham + '</option>');
-                                });
-                            } else {
-                                alert("Không có ca khám nào khả dụng trong ngày này.");
-                            }
-                        },
-                        error: function () {
-                            alert("Có lỗi xảy ra khi tải ca khám. Vui lòng thử lại.");
-                        }
-                    });
-                } else {
-                    $('select[name=cakham]').empty(); // Làm trống dropdown nếu không chọn đủ thông tin
-                    $('select[name=cakham]').append('<option> Chọn ca khám </option>');
-                }
-            });
-        });
-
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('button[name="datlich"]').click(function () {
-                // Lấy giá trị từ các trường
+    @section Scripts {
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
+            // 1. Khi chọn "khoa", cần đảm bảo đã chọn "chi nhánh" trước
+            $('select[name=khoa]').change(function () {
                 var chinhanh = $('input[name=chinhanh]:checked').val(); // Lấy giá trị radio chinhanh
-                var hinhthuc = $('input[name=hinhthuc]:checked').val(); // Lấy giá trị radio hinhthuc
                 var khoa = $('select[name=khoa]').val(); // Lấy giá trị select khoa
-                var bacsi = $('select[name=bacsi]').val(); // Lấy giá trị select bác sĩ
-                var ngaykham = $('select[name=ngaykham]').val(); // Lấy giá trị select ngày khám
-                var cakham = $('select[name=cakham]').val(); // Lấy giá trị select ca khám
-                var mota = $('textarea[name=mota]').val(); // Lấy mô tả
+                var hinhthuc = $('input[name=hinhthuc]:checked').val(); // Lấy giá trị radio hình thức
 
-                // Kiểm tra dữ liệu đầu vào
-                if (!chinhanh || !khoa || !bacsi || !ngaykham || !cakham || !mota) {
+                if (!chinhanh) {
+                    alert("Bạn phải chọn chi nhánh trước!");
+                    $(this).val("");
+                    return;
+                }
+
+                if (!khoa) {
+                    $('select[name=bacsi]').empty().append('<option value="">-- Chọn bác sĩ --</option>');
+                    $('select[name=ngaykham]').empty().append('<option value="">-- Chọn ngày khám --</option>');
+                    $('select[name=cakham]').empty().append('<option value="">-- Chọn ca khám --</option>');
+                    return;
+                }
+
+                $.ajax({
+                    url: "/Admin/NguoiDungs/getNguoiDung",
+                    type: "GET",
+                    // Thêm hinhthuc vào data gửi đi
+                    data: { tenKhoa: khoa, chinhanh: chinhanh, hinhthuc: hinhthuc },
+                    success: function (results) {
+                        var bacsiSelect = $('select[name=bacsi]');
+                        bacsiSelect.empty().append('<option value="">-- Chọn bác sĩ --</option>');
+                        $.each(results, function (index, result) {
+                            bacsiSelect.append('<option value="' + result.mand + '">' + result.hoten + '</option>');
+                        });
+                        // Reset dropdown ngày và ca
+                        $('select[name=ngaykham]').empty().append('<option value="">-- Chọn ngày khám --</option>');
+                        $('select[name=cakham]').empty().append('<option value="">-- Chọn ca khám --</option>');
+                    },
+                    error: function () {
+                        alert("Lỗi khi lấy danh sách bác sĩ.");
+                    }
+                });
+            });
+            // 2. Khi chọn "bác sĩ", kiểm tra xem giá trị có tồn tại không
+            $('select[name=bacsi]').change(function () {
+                var mand = $(this).val();
+                var hinhthuc = $('input[name=hinhthuc]:checked').val(); // Lấy hình thức khám
+                if (!mand) {
+                    $('select[name=ngaykham]').empty().append('<option value="">-- Chọn ngày khám --</option>');
+                    return;
+                }
+                $.ajax({
+                    url: "/Admin/NguoiDungs/getNgayKham",
+                    type: "GET",
+                    // Nếu cần, bạn có thể gửi hinhthuc vào đây nếu server dùng để lọc ngày khám
+                    data: { mand: mand, hinhthuc: hinhthuc },
+                    success: function (results) {
+                        var ngaySelect = $('select[name=ngaykham]');
+                        ngaySelect.empty().append('<option value="">-- Chọn ngày khám --</option>');
+                        $('select[name=cakham]').empty().append('<option value="">-- Chọn ca khám --</option>');
+                        if (results.length > 0) {
+                            $.each(results, function (index, ngaykham) {
+                                ngaySelect.append('<option value="' + ngaykham + '">' + ngaykham + '</option>');
+                            });
+                        } else {
+                            alert("Không có ngày khám khả dụng cho bác sĩ này.");
+                        }
+                    },
+                    error: function () {
+                        alert("Có lỗi khi tải ngày khám. Vui lòng thử lại.");
+                    }
+                });
+            });
+
+
+            // 3. Khi chọn "ngày khám", kiểm tra bác sĩ đã được chọn chưa
+            $('select[name=ngaykham]').change(function () {
+                var mand = $('select[name=bacsi]').val();
+                var ngaykham = $(this).val();
+                var hinhthuc = $('input[name=hinhthuc]:checked').val();
+                if (!mand) {
+                    alert("Bạn phải chọn bác sĩ trước!");
+                    $(this).val("");
+                    return;
+                }
+                if (!ngaykham) {
+                    $('select[name=cakham]').empty().append('<option value="">-- Chọn ca khám --</option>');
+                    return;
+                }
+                $.ajax({
+                    url: "/Admin/NguoiDungs/getCaKham",
+                    type: "GET",
+                    data: { mand: mand, ngaykham: ngaykham, hinhthuc: hinhthuc },
+                    success: function (results) {
+                        var caSelect = $('select[name=cakham]');
+                        caSelect.empty().append('<option value="">-- Chọn ca khám --</option>');
+                        if (results.length > 0) {
+                            $.each(results, function (index, cakham) {
+                                caSelect.append('<option value="' + cakham + '">' + cakham + '</option>');
+                            });
+                        } else {
+                            alert("Không có ca khám nào khả dụng trong ngày này.");
+                        }
+                    },
+                    error: function () {
+                        alert("Có lỗi xảy ra khi tải ca khám. Vui lòng thử lại.");
+                    }
+                });
+            });
+
+
+            // 4. Khi bấm "Đặt lịch", kiểm tra tất cả thông tin đã được chọn chưa
+            $('button[name="datlich"]').click(function () {
+                var chinhanh = $('input[name=chinhanh]:checked').val();
+                var hinhthuc = $('input[name=hinhthuc]:checked').val();
+                var khoa = $('select[name=khoa]').val();
+                var bacsi = $('select[name=bacsi]').val();
+                var ngaykham = $('select[name=ngaykham]').val();
+                var cakham = $('select[name=cakham]').val();
+                var mota = $('textarea[name=mota]').val();
+
+                if (!chinhanh || !hinhthuc || !khoa || !bacsi || !ngaykham || !cakham || !mota) {
                     alert("Vui lòng nhập đầy đủ thông tin!");
                     return;
                 }
 
-                // Tạo dữ liệu để gửi
                 var data = {
                     chinhanh: chinhanh,
                     hinhthuc: hinhthuc,
@@ -347,29 +353,28 @@
                     mota: mota
                 };
 
-                // Gửi dữ liệu qua AJAX
                 $.ajax({
-                    url: "/Lichkham/ActionPostData", // URL của hàm POST trên server
+                    url: "/Lichkham/ActionPostData",
                     type: "POST",
-                    contentType: "application/json", // Định dạng JSON
-                    data: JSON.stringify(data), // Chuyển dữ liệu thành chuỗi JSON
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
                     success: function (response) {
                         if (response.success) {
-                            alert("Đã post lên cho actionpostdata");
-                            // Có thể thêm logic chuyển trang hoặc reset form ở đây
+                            alert("Đặt lịch thành công!");
+                            // Ví dụ chuyển trang
+                            // window.location.href = "/Lichkham/Confirm/" + response.id;
                         } else {
-                            alert("Lưu thành công! " + response.message);
+                            alert("Đặt lịch thất bại: " + response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
-                        console.error("Lỗi khi gửi dữ liệu:", error);
-                        alert("Có lỗi xảy ra. Vui lòng thử lại11!");
+                    error: function () {
+                        alert("Có lỗi xảy ra. Vui lòng thử lại!");
                     }
                 });
             });
-        });
 
-    </script>
+        </script>
+    }
 }
 else
 {
@@ -511,7 +516,7 @@ else
                             </div>
                         </div>
                         <br />
-                      
+
                         <form action="">
                             <div class="el-form-item">
                                 <!---->
@@ -544,7 +549,7 @@ else
                                     </div><!---->
                                 </div>
                             </div><!---->
-                            
+
                             <br />
                             <div class="el-form-item">
                                 <!---->
@@ -588,21 +593,21 @@ else
                             </div><!---->
                         </div>
                     </div>
-                    
+
                     <br />
                     <button name="datlich" type="button" class="el-button expanded el-button--primary" style="background: #1f28af;width: 470px; height:100%;color:white; margin-left:15px;" @*onchange="this.form.submit()"*@>
 
                         <a><span>ĐẶT LỊCH KHÁM →</span></a>
                     </button>
 
-                    
+
 
 
                 </div>
                 <div class="el-loading-mask" style="display: none;">
                     <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><!----></div>
                 </div>
-               
+
 
             </div>}
 

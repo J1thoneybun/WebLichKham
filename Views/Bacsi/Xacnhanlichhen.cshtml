@@ -35,18 +35,10 @@
         </div>
     </div>
 
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
     <div class="form-group">
         <label class="control-label col-md-2" for="BatDau"> Ngày khám </label>
         <div class="col-md-10">
-            @*<input type="text" value="@ViewBag.ngaykham" id="ngaykham" name="ngaykham" style="border:1px solid #ccc;width:500px; height:35px;" />*@
+
             @Html.EditorFor(model => model.ngaykham, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ngaykham, "", new { @class = "text-danger" })
         </div>
@@ -73,7 +65,7 @@
                 <option value="2">Đã tư vấn xong</option>
                 <option value="3"> Từ chối lịch hẹn</option>
             </select>
-            @*@Html.EditorFor(model => model.TrangThai, new { htmlAttributes = new { @class = "form-control" } })*@
+
             @Html.ValidationMessageFor(model => model.trangthai, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -37,7 +37,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.ngaysinh, "Ngày sinh", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            <input class="form-control text-box single-line" data-val="true" data-val-date="The field Bắt đầu must be a date." id="ngaysinh" name="ngaysinh" type="date" value="@ViewBag.ngay" />
+                            <input class="form-control text-box single-line" data-val="true" data-val-date="The field must be a date." id="ngaysinh" name="ngaysinh" type="date" value="@ViewBag.ngay" />
                             <span class="field-validation-valid text-danger" data-valmsg-for="ngaysinh" data-valmsg-replace="true"></span>
                         </div>
                         @Html.ValidationMessageFor(model => model.ngaysinh, "", new { @class = "text-danger" })

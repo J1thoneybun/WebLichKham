@@ -51,7 +51,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.ngayhoi, "Ngày hỏi", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <input class="form-control text-box single-line" data-val="true" data-val-date="The field Bắt đầu must be a date." id="ngayhoi" name="ngayhoi" type="date" value="@ViewBag.ngay" />
+            <input class="form-control text-box single-line" data-val="true" data-val-date="The field must be a date." id="ngayhoi" name="ngayhoi" type="date" value="@ViewBag.ngay" />
             <span class="field-validation-valid text-danger" data-valmsg-for="ngayhoi" data-valmsg-replace="true"></span>
         </div>
         @Html.ValidationMessageFor(model => model.ngayhoi, "", new { @class = "text-danger" })
@@ -66,5 +66,5 @@
 </div>}
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "HoiDaps")
 </div>

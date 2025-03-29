@@ -18,7 +18,8 @@ namespace WebAppYte.Models
         [Key]
         public int maca { get; set; }
 
-        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? ngaykham { get; set; }
 
         [StringLength(30)]

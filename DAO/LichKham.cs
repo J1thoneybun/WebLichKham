@@ -112,7 +112,7 @@ namespace WebAppYte.DAO
 
             return lst.ToList();
         }
-        public int FindMaCa( string bs, string hinhthuc, string bacsi)
+        public int FindMaCa(string bs, string hinhthuc, string bacsi)
         {
             string[] name = bs.Split(',');
             string ngay = name[0], ca = name[1];
@@ -133,85 +133,6 @@ namespace WebAppYte.DAO
                            }).FirstOrDefault().maca;
 
             return ma;
-            }
-        //public int FindMaCa(string ngaykham, string ca, string hinhthuc, int bacsi)
-        //{
-        //    try
-        //    {
-        //        // Chuyển đổi ngaykham sang DateTime trước
-        //        if (!DateTime.TryParseExact(ngaykham, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime parsedNgay))
-        //        {
-        //            throw new FormatException("Định dạng ngày không hợp lệ. Định dạng phải là 'yyyy-MM-dd'.");
-        //        }
-
-        //        modelWeb db = new modelWeb();
-
-        //        // Thực hiện truy vấn với parsedNgay
-        //        var res = (from y in db.CaKhams
-        //                   where DbFunctions.TruncateTime(y.ngaykham) == parsedNgay.Date
-        //                         && y.ca == ca
-        //                         && y.hinhthuc == hinhthuc
-        //                         && y.mand == mand
-        //                   select new
-        //                   {
-        //                       y.maca
-        //                   }).FirstOrDefault();
-
-        //        // Lấy kết quả
-        //        int ma = 0;
-        //        if (res != null)
-        //        {
-        //            ma = res.maca; // Gán giá trị maca nếu tìm thấy
-        //        }
-        //        return ma; // Trả về 0 nếu không tìm thấy
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine($"Lỗi khi tìm maca: {ex.Message}");
-        //        return -1; // Trả về -1 nếu xảy ra lỗi
-        //    }
-        //}
-
-
-
-
-
-        //public int FindMaBS(string khoa, string chinhanh)
-        //{
-        //    modelWeb db = new modelWeb();
-
-        //    var res = (from y in db.NguoiDungs
-        //               from x in db.Khoas
-        //               from z in db.ChiNhanhs
-
-        //               where y.makhoa == x.makhoa && y.machinhanh == z.machinhanh && x.tenkhoa == khoa && z.diachi == chinhanh
-        //               select new
-        //               {
-        //                   y.mand
-        //               }).FirstOrDefault();
-        //    int ma = 0;
-        //    if (res != null) ma = res.mand;
-        //    return ma;
-        //}
-        //public int FindMaBS(string khoa, string chinhanh, string bacsi)
-        //{
-        //    // Khởi tạo đối tượng DbContext (thay modelWeb bằng tên DbContext thực tế của bạn)
-        //    modelWeb db = new modelWeb();
-
-        //    // Truy vấn kết hợp bảng NguoiDungs, Khoas, và ChiNhanhs
-        //    var res = (from y in db.NguoiDungs
-        //               join x in db.Khoas on y.makhoa equals x.makhoa
-        //               join z in db.ChiNhanhs on y.machinhanh equals z.machinhanh
-        //               where x.tenkhoa == khoa && z.diachi == chinhanh && y.hoten == bacsi
-        //               select y.mand) // Chỉ lấy cột y.mand
-        //               .FirstOrDefault();
-
-        //    // Trả về giá trị res hoặc 0 nếu không tìm thấy
-        //    return res > 0 ? res : 0;
-        //}
-
-
-
-
+        }
     }
 }

@@ -147,24 +147,14 @@ namespace WebAppYte.Controllers
             ViewBag.k = khoa;
             TTNguoiDung ls = new TTNguoiDung();
             var bss = ls.ListNguoiDung().ToList();
-            //if (chinhanh != null && khoa != null)
-            //{
-            //    bss = ls.ListNguoiDung().Where(x => x.tenchinhanh == chinhanh && x.tenkhoa == khoa).ToList();
-            //}
+         
             var bs1 = (from p in bss select p.hoten).ToList();
             ViewBag.bacsi = bs1;
             ViewBag.bs = bacsi;
             DateTime a = DateTime.Now;
             var ngay = db.CaKhams.Where(x => x.ngaykham >= a.Date).ToList();
             LichKham lichkham = new LichKham();
-            //if (LKSave.chinhanh != null && LKSave.khoa != null && LKSave.hinhthuc != null)
-            //{
-            //    LKSave.mand = lichkham.FindMaBS(LKSave.khoa, LKSave.chinhanh);
-            //    if (LKSave.hinhthuc != null && LKSave.mand != null)
-            //    {
-            //        ngay = db.CaKhams.Where(x => x.mand == LKSave.mand && x.hinhthuc == LKSave.hinhthuc && x.ngaykham >= a.Date).ToList();
-            //    }
-            //}
+          
             ViewBag.ngaykham = (from p in ngay select p.ngaykham.Value.ToString("dd-MM-yyyy")).ToList();
             ViewBag.nk = ngaykham;
             var ca = db.CaKhams.Where(x => x.ngaykham >= a.Date).ToList();
@@ -206,10 +196,7 @@ namespace WebAppYte.Controllers
                                 ViewBag.Fail = "Ca khám này đã có người đặt!";
                                 return PartialView();
                             }
-                            //db.DatLiches.Add(f);
-                            // db.SaveChanges();
-
-                            //   return RedirectToAction("Index", "LichKham", new { id = u.mabn });
+                       
                         }
                     }
                 }
@@ -230,34 +217,12 @@ namespace WebAppYte.Controllers
             return PartialView();
         }
 
-
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult ActionPostData(string hinhthuc, string chinhanh, string khoa, 
-        //    string bacsi, string ngaykham,string cakham, string mota)
-        //{      
-        //    var u = Session["user"] as WebAppYte.Models.BenhNhan;
-        //    LKSave.chinhanh = chinhanh;
-        //    LKSave.khoa = khoa;
-        //    LKSave.bacsi = bacsi;
-        //    LKSave.hinhthuc = hinhthuc;
-        //    LKSave.ngaykham = ngaykham;
-        //    LKSave.cakham = cakham;
-        //    LKSave.mota = mota;
-        //    return RedirectToAction("Create", new { hinhthuc = LKSave.hinhthuc, 
-        //        chinhanh = LKSave.chinhanh, khoa = LKSave.khoa, bacsi = LKSave.bacsi, 
-        //        ngaykham = LKSave.ngaykham, cakham = LKSave.cakham, mota =LKSave.mota });
-        //}
         [HttpPost]
         public ActionResult ActionPostData(string hinhthuc, string chinhanh, string khoa, string bacsi, string ngaykham, string cakham, string mota)
         {
             try
             {
-                // Ghi log các giá trị nhận được
-                //System.Diagnostics.Debug.WriteLine($"Dữ liệu nhận: hinhthuc={hinhthuc}, chinhanh={chinhanh}, khoa={khoa}, bacsi={bacsi}, ngaykham={ngaykham}, cakham={cakham}, mota={mota}");
-
-                // Xử lý dữ liệu
+                
                 LKSave.hinhthuc = hinhthuc;
                 LKSave.chinhanh = chinhanh;
                 LKSave.khoa = khoa;

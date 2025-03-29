@@ -66,7 +66,7 @@ namespace WebAppYte.Controllers
             {
                 return HttpNotFound();
             }
-            @ViewBag.ngay = (cakham.ngaykham).Value.ToString("dd-MM-yyyy");
+            @ViewBag.ngay = (cakham.ngaykham).Value.ToString("yyyy-MM-dd");
 
             return View(cakham);
         }
@@ -77,27 +77,27 @@ namespace WebAppYte.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit(int maca, string hinhthuc, DateTime ngaykham, string ca)
+        public ActionResult Edit(CaKham model)
         {
-          
-
             if (ModelState.IsValid)
             {
                 var userBS = Session["userBS"] as WebAppYte.Models.NguoiDung;
-                CaKham cakham = db.CaKhams.Find(maca);
-                cakham.hinhthuc = hinhthuc;
-                cakham.ngaykham = ngaykham;
-                cakham.ca = ca;
+                CaKham cakham = db.CaKhams.Find(model.maca);
+                if (cakham == null) return HttpNotFound();
+
+             
+                cakham.hinhthuc = model.hinhthuc;
+                cakham.ngaykham = model.ngaykham;
+                cakham.ca = model.ca;
                 cakham.trangthai = 1;
                 cakham.mand = userBS.mand;
+
                 db.Entry(cakham).State = EntityState.Modified;
                 db.SaveChanges();
-            
-             
-                return RedirectToAction("Index",  new { id = userBS.mand });
-            }
 
-            return View();
+                return RedirectToAction("Index", new { id = userBS.mand });
+            }
+            return View(model);
         }
 
         public ActionResult Delete(int? id)
@@ -111,7 +111,7 @@ namespace WebAppYte.Controllers
             {
                 return HttpNotFound();
             }
-            @ViewBag.ngay = (cakham.ngaykham).Value.ToString("dd-MM-yyyy");
+            @ViewBag.ngay = (cakham.ngaykham).Value.ToString("yyyy-MM-dd");
 
             return View(cakham);
         }
@@ -122,27 +122,22 @@ namespace WebAppYte.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Delete(int maca, string hinhthuc, DateTime ngaykham, string ca)
+        public ActionResult Delete(CaKham model)
         {
-
-
             if (ModelState.IsValid)
             {
-                var userBS = Session["userBS"] as WebAppYte.Models.NguoiDung;
-                CaKham cakham = db.CaKhams.Find(maca);
-                cakham.hinhthuc = hinhthuc;
-                cakham.ngaykham = ngaykham;
-                cakham.ca = ca;
+                var cakham = db.CaKhams.Find(model.maca);
+                if (cakham == null) return HttpNotFound();
+
                 cakham.trangthai = 0;
-                cakham.mand = userBS.mand;
                 db.Entry(cakham).State = EntityState.Modified;
                 db.SaveChanges();
 
 
-                return RedirectToAction("Index", new { id = userBS.mand });
+                return RedirectToAction("Index", new { id = cakham.mand });
             }
 
-            return View();
+            return View(model);
         }
         // GET: Admin/Tintucs/Delete/5
 

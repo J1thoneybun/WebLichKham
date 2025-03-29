@@ -9,10 +9,6 @@
 
 
 <style type="text/css">
-    /*    td {
-        text-align: center
-    }*/
-
     th {
         text-align: center
     }
@@ -28,11 +24,11 @@
 <div id="nivoslider" class="slides nivoSlider">
 
     <div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div>
-    <div class="nivo-slice" name="0" style="left: 0px; width: 1530px; height: 515px; opacity: 1; overflow: hidden;">
+    <div class="nivo-slice" name="0" style="left: 0px; width: 100%; height: 515px; opacity: 1; overflow: hidden;">
         <div class="col-sm-12" style="position:absolute; width:1519px; height:auto; display:block !important; top:180px; left:200px;">
             <nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/Home/Index">TRANG CHỦ</a><span class="separator"> &gt; </span><span class="last">CHUYÊN GIA - BÁC SĨ</span></p></nav>
         </div>
-        <img src="~/images/images/banner-chuyen-gia-bac-si-desk.jpg" style="position:absolute; width:1519px; height:auto; display:block !important; top:210px; left:-0px;">
+        <img src="~/images/images/banner-chuyen-gia-bac-si-desk.jpg" style="position:relative; width:100%; height:auto; display:block !important; top:160px; left:0px;">
     </div>
 
 </div>
@@ -56,9 +52,7 @@
             <div class="col-xs-12 text-center pb_15 mb_15">
 
                 <button class="click_location btn bg_xam cl_33 text-uppercase active" data-gtm-vis-recent-on-screen-2545377_121="78" data-gtm-vis-first-on-screen-2545377_121="78" data-gtm-vis-total-visible-time-2545377_121="100" data-gtm-vis-has-fired-2545377_121="1" data-gtm-vis-recent-on-screen-2545377_155="82" data-gtm-vis-first-on-screen-2545377_155="82" data-gtm-vis-total-visible-time-2545377_155="100" data-gtm-vis-has-fired-2545377_155="1"><a href="@Url.Action("ChuyenGiaBacSi", "ChuyenGiaBacSi")">Toàn hệ thống</a></button>
-                @*<button class="  click_location btn bg_xam cl_33 text-uppercase " data-gtm-vis-has-fired-2545377_121="1" data-gtm-vis-has-fired-2545377_155="1"> <a href="@Url.Action("TamAnhHaNoi", "ChuyenGiaBacSi")">Hà Nội</a></button>
-                <button class="  click_location btn bg_xam cl_33 text-uppercase " data-gtm-vis-has-fired-2545377_121="1" data-gtm-vis-has-fired-2545377_155="1"><a href="@Url.Action("TamAnhDaNang", "ChuyenGiaBacSi")">Đà Nẵng</a></button>
-                <button class="  click_location btn bg_xam cl_33 text-uppercase " data-gtm-vis-has-fired-2545377_121="1" data-gtm-vis-has-fired-2545377_155="1"><a href="@Url.Action("TamAnhSaiGon", "ChuyenGiaBacSi")">Sài Gòn</a></button>*@
+
                 <script>
                     jQuery(document).ready(function () {
                         jQuery("label[data-location=\'35\']").trigger('click');
@@ -137,7 +131,7 @@
                 <div class="col-xs-12  col-sm-12 item_post  mb_15 ">
                     <div class="row">
                         <div class="col-xs-6 col-sm-4 col-md-3 mb_15">
-                            <a class="thumb_cgia" href="/Home/ChuyenGiaBacSi/@item.tendn">
+                            <a class="thumb_cgia">
                                 <img class="img-responsive " loading="lazy" src="~/images/images/@item.anh">
                             </a>
                         </div>
@@ -147,7 +141,7 @@
                                     <h2 class="mt_0 mb_10 sz_18 cl_33" style="font-weight: bold;">@item.hoten</h2>
                                 </a>
                                 <div class="font_helI s" style=" font-style: italic;">
-                                    <div class="sss">@item.chucvu</div><div>Bệnh viện Đa khoa Tâm Anh @item.tenchinhanh</div>
+                                    <div class="sss">@item.chucvu</div><div>Phòng khám Linh Đàm @item.tenchinhanh</div>
                                 </div>
                                 <div class="mt_10 hidden-xs">@item.gioithieu</div>
                                 <div class="text-right mt_10 hidden-xs">

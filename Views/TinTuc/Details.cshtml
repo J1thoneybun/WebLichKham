@@ -1,7 +1,7 @@
 ﻿@model WebAppYte.Models.BaiViet
 
 @{ ViewBag.Title = "Details";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <div id="nivoslider" class="slides nivoSlider">
 
@@ -22,22 +22,30 @@
 
         <div class="mb_10 small ">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            @Model.ngaydang.Value.ToString("dd/MM/yyyy")                       
-                <img class="mt_10mb" width="300" src="" alt="">
-            
+            @Model.ngaydang.Value.ToString("dd/MM/yyyy")
+            <img class="mt_10mb" width="300" src="" alt="">
+
         </div>
     </div>
     <div class="box_detail_post">
     </div>
     <div class="post_info box_detail_post">
-        
+
         @Html.Raw(Model.noidung)
         <div class="div_over bg_xam pt_10 pb_10 pl_15 pr_15 noleft_mb noright_mb box_detail_post" data-gtm-vis-recent-on-screen-2545377_155="569444" data-gtm-vis-first-on-screen-2545377_155="569444" data-gtm-vis-total-visible-time-2545377_155="100" data-gtm-vis-has-fired-2545377_155="1" data-gtm-vis-recent-on-screen-2545377_121="569448" data-gtm-vis-first-on-screen-2545377_121="569448" data-gtm-vis-total-visible-time-2545377_121="100" data-gtm-vis-has-fired-2545377_121="1">
             <div class="row ">
 
-              
+
             </div>
         </div>
 
     </div>
 </div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <center>
+        <div class="form-actions no-color">           
+            @Html.ActionLink("Back to List", "Index", "TinTuc")
+        </div>
+    </center>}

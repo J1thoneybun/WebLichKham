@@ -146,7 +146,7 @@ namespace WebAppYte.Controllers
             Bien.tencv = tencv;
             return RedirectToAction("Search/" + ViewBag.txt, new { });
         }
-        public ActionResult TamAnhHaNoi(string id, string tencv, int page = 1)
+        public ActionResult LinhDamHaNoi(string id, string tencv, int page = 1)
         {
             TTNguoiDung nd = new TTNguoiDung();
             id = Bien.str;
@@ -191,97 +191,7 @@ namespace WebAppYte.Controllers
             var model = nguoi_dung.Where(x => x.tenchinhanh =="Hà Nội").ToPagedList(page, pageSize);
             return View(model);
         }
-        public ActionResult TamAnhDaNang(string id, string tencv, int page = 1)
-        {
-            TTNguoiDung nd = new TTNguoiDung();
-            id = Bien.str;
-            int pageSize = 5;
-
-            List<string> segmentList = (from p in db.Khoas select p.tenkhoa).ToList();
-            ViewBag.segmentList = segmentList;
-            ViewBag.filter = id;
-
-            var chucvu = new List<listofSegments>();
-            listofSegments segmentItem;
-            var strArr = new string[] { "Giám đốc", "Dược sĩ", "Cố vẫn chuyên môn", "Trưởng khoa", "Phó khoa", "Bác sĩ" };
-
-            for (int index = 0; index < strArr.Length; index++)
-            {
-                segmentItem = new listofSegments();
-                segmentItem.Text = strArr[index];
-                segmentItem.Value = strArr[index];
-                chucvu.Add(segmentItem);
-            }
-            ViewBag.chucvu = chucvu;
-            ViewBag.choose = tencv;
-
-
-
-            var list = db.Khoas.ToList();
-            var nguoi_dung = nd.ListNguoiDung();
-
-
-            if (list.Exists(x => x.tenkhoa == id) == true)
-            {
-
-                nguoi_dung = nguoi_dung.Where(x => x.tenkhoa == id).ToList();
-            }
-
-            if (tencv != null)
-            {
-
-                nguoi_dung = nguoi_dung.Where(x => x.chucvu.Contains(tencv)).ToList();
-            }
-
-            var model = nguoi_dung.Where(x => x.tenchinhanh == "Đà Nẵng").ToPagedList(page, pageSize);
-            return View(model);
-        }
-
-        public ActionResult TamAnhSaiGon(string id, string tencv, int page = 1)
-        {
-            TTNguoiDung nd = new TTNguoiDung();
-            id = Bien.str;
-            int pageSize = 5;
-
-            List<string> segmentList = (from p in db.Khoas select p.tenkhoa).ToList();
-            ViewBag.segmentList = segmentList;
-            ViewBag.filter = id;
-
-            var chucvu = new List<listofSegments>();
-            listofSegments segmentItem;
-            var strArr = new string[] { "Giám đốc", "Dược sĩ", "Cố vẫn chuyên môn", "Trưởng khoa", "Phó khoa", "Bác sĩ" };
-
-            for (int index = 0; index < strArr.Length; index++)
-            {
-                segmentItem = new listofSegments();
-                segmentItem.Text = strArr[index];
-                segmentItem.Value = strArr[index];
-                chucvu.Add(segmentItem);
-            }
-            ViewBag.chucvu = chucvu;
-            ViewBag.choose = tencv;
-
-
-
-            var list = db.Khoas.ToList();
-            var nguoi_dung = nd.ListNguoiDung();
-
-
-            if (list.Exists(x => x.tenkhoa == id) == true)
-            {
-
-                nguoi_dung = nguoi_dung.Where(x => x.tenkhoa == id).ToList();
-            }
-
-            if (tencv != null)
-            {
-
-                nguoi_dung = nguoi_dung.Where(x => x.chucvu.Contains(tencv)).ToList();
-            }
-
-            var model = nguoi_dung.Where(x => x.tenchinhanh == "Sài Gòn").ToPagedList(page, pageSize);
-            return View(model);
-        }
+      
         public ActionResult DatLichHen(string id)
         {
             TTNguoiDung nd = new TTNguoiDung();
@@ -294,15 +204,7 @@ namespace WebAppYte.Controllers
 
         public ActionResult Details(int id)
         {
-          /*  if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-            }
-            TrungTamGanNhat tt = db.TrungTamGanNhats.Find(id);
-            if (tt == null)
-            {
-                return HttpNotFound();
-            } */
+         
             return View();
         }
         public ViewResult van()

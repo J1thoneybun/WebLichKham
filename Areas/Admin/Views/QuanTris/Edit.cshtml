@@ -93,7 +93,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.gioithieu, "Giới thiệu", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @* @Html.TextAreaFor(model => model.gioithieu, new { htmlAttributes = new { @class = "form-control" } })*@
+
             <textarea cols="155" rows="4" name="gioithieu" id="gioithieu" value="">@ViewBag.gioithieu</textarea>
         </div>
     </div>
@@ -162,13 +162,8 @@
     });
 
 
-  @*  var ckeditor;
-    function createEditor(languageCode, id) {
-        var editor = CKEDITOR.replace(id, { language: languageCode });
-    }
-    $(function () { createEditor('vi', 'gioithieu') });*@
 </script>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "QuanTris")
 </div>

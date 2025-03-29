@@ -25,29 +25,7 @@
                 <div class="container">
                     <div class="row">
                         <div style="background-color: rgb(16,46,158); top: 10px; " class="div_logo header_left col-lg-2 col-sm-3 col-xs-12">
-                            <a><img class="lazyload" alt="Bệnh viện đa khoa Tâm Anh" data-src="~/images/images/logo_desk.png" src="~/images/images/logongatuho.png" style="height:155px;width:253px;"></a>
-                        </div>
-                        <div class="header_right col-lg-10 col-sm-9 hidden-xs text-right">
-                            <div class="header_left mb_5 mt_0 item div_inline ">
-                                @*<a rel="nofollow" href=""><img class="lazyload" data-src="~/images/images/dang-ky-tiem-covid-1.png" src="~/images/images/dang-ky-tiem-covid-1.png"></a>*@
-                                @*<a rel="nofollow" href=""><img class="lazyload" data-src="~/Common/images/xncv.png" src="~/images/images/xncv.png"></a>*@
-                                <a rel="nofollow" href="https://tamanhhospital.vn/phong-kham-online/"><img class="lazyload" data-src="~/images/images/icon-dang-dien-ra-1.png" src="~/images/images/icon-dang-dien-ra-1.png"></a>
-                                <a rel="nofollow" href="https://tamanhhospital.vn/tra-gop-0-lai-suat-khi-su-dung-dich-vu-kham-chua-benh-dieu-tri-ivf-iui/"><img class="lazyload" data-src="~/images/images/i-tragop-e1647833423269-2.png" src="~/images/images/i-tragop-e1647833423269-2.png"></a>
-                            </div>
-                            @*<div class="header_top mb_5 mt_5 pull-right">
-                                <a rel="" href="tel:0123456789"><img class="lazyload" data-src="~/images/images/phone-hn.png" src="~/images/images/sdt.png"></a>
-                            </div>*@
-                            <div class="header_footer pt_15">
-                                @*<div class="pl_15 item">
-                                    <span class="icon_img">
-                                        <a rel="nofollow" target="_blank" href=""><img class="lazyload" height="26" width="auto" data-src="~/images/images/i_tour.png" src="~/images/images/i_tour.png"></a>
-                                    </span>
-                                <a rel="nofollow" target="_blank" href="https://360.tamanhhospital.vn">
-                                    <span class="text cl_white">Tour ảo</span>
-                                    </a>
-                                </div>*@
-                                <div class="pl_15 item"><span class="icon_img"><a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/"><img class="lazyload" height="26" width="auto" data-src="~/images/images/i_customer.png" src="~/images/images/i_customer.png"></a></span><a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/"><span class="text cl_white">Dành cho khách hàng</span></a></div><div class="pl_15 item"><span class="icon_img"><a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/"><img class="lazyload" height="26" width="auto" data-src="~/images/images/i_faq.png" src="~/images/images/i_faq.png"></a></span><a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/"><span class="text cl_white">Hỏi đáp</span></a></div><div class="pl_15 item"><span class="icon_img"><a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/"><img class="lazyload" height="26" width="auto" data-src="~/images/images/i_calendar.png" src="~/images/images/i_calendar.png"></a></span><a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/"><span class="text cl_white">Đặt lịch khám</span></a></div>
-                            </div>
+                            <a><img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;"></a>
                         </div>
                     </div>
                 </div>
@@ -64,27 +42,14 @@
                 <div class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav">
-
-                        <li class="dropdown">
-                            @Html.ActionLink(" TRANG CHỦ ", "Index", "Home", null, new { @class = "MauchuMenu" })
-                            <ul class="dropdown-menu">
-                                <li>
-                                    @Html.ActionLink(" GIOI THIEU ", "Gioithieu", "Home", null, new { @class = "MauchuMenu" })
-                                </li>
-                            </ul>
-                        </li>
-                        @*<li>@Html.ActionLink(" TIN TỨC COVID ", "listAll", "Hoidap", null, new { @class = "MauchuMenu" })</li>*@
-
+                        <li>@Html.ActionLink(" TRANG CHỦ ", "Index", "Home", null, new { @class = "MauchuMenu" })</li>
+                        <li>@Html.ActionLink(" GIỚI THIỆU ", "Gioithieu", "Home", null, new { @class = "MauchuMenu" })</li>
                         <li>@Html.ActionLink(" CHUYÊN GIA - BÁC SĨ", "ChuyenGiaBacSi", "ChuyenGiaBacSi", null, new { @class = "MauchuMenu" })</li>
                         <li>@Html.ActionLink(" TIN TỨC", "Index", "TinTuc", null, new { @class = "MauchuMenu" })</li>
-
                         <li>@Html.ActionLink(" HỎI ĐÁP ONLINE", "listAll", "Hoidap", null, new { @class = "MauchuMenu" })</li>
-
                         <li>@Html.ActionLink(" ĐẶT LỊCH KHÁM", "Create", "LichKham", null, new { @class = "MauchuMenu" })</li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li> @Html.ActionLink("ĐĂNG KÝ", "Dangky", "Home", null, new { @class = "MauchuMenu" }) </li>
-                        <li> @Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "Home", null, new { @class = "MauchuMenu" })</li>
+                        <li>@Html.ActionLink("ĐĂNG KÝ", "Dangky", "Home", null, new { @class = "MauchuMenu" }) </li>
+                        <li>@Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "Home", null, new { @class = "MauchuMenu" })</li>
                     </ul>
 
                 </div>
@@ -95,11 +60,12 @@
             <hr />
         </div>
         <hr />
+
         <footer id="footer" class="cl_white bg_brand pt_30 mb_center">
             <div class="container">
                 <div class="row">
                     <div class="footer-1  col-sm-3 col-xs-12">
-                        <img width="253" height="155" src="~/images/images/logobenhvienngatuho.png" class="image wp-image-12663  attachment-full size-full" alt="Bệnh viện đa khoa Tâm Anh" loading="lazy" style="max-width: 100%; height: auto;">
+                        <img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;">
                     </div>
                     <div class="footer-2  col-sm-6  col-xs-12">
                         <h3 class="widget-title sz_16 mt_0 font_hel mb_0"><span>HỆ THỐNG BỆNH VIỆN</span></h3><div class="textwidget custom-html-widget">
@@ -107,74 +73,34 @@
                                 <li class="row">
                                     <div class="col-sm-7 col-xs-12">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Số 5, bến Hồ, phường Hồ, Thuận Thành, Bắc Ninh
+                                        Ô 26 - BT1X2, Khu đô thị Bắc Linh Đàm, Hoàng Mai, Hà Nội
                                     </div>
                                     <div class="col-sm-5 col-xs-12">
                                         <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <a href="tel:0868535115"><span class="cl_white">0868535115</span></a><br>
-                                        <a href="tel:0983745115"><span class="cl_white">0983745115</span></a><br>
-                                        <span class="small">làm việc từ 6h30 - 21h30</span>
+                                        <a href="tel:0866 816 115"><span class="cl_white">0866 816 115</span></a><br>
+                                        <span class="small">làm việc từ 7h30 - 19h30</span>
                                         <br>
                                         <div>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <a href="mailto:congtythietbiytekinhbac@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
+                                            <a href="mailto:phongkhamlinhdam@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
                                             <br>
                                         </div>
                                         <div>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <a href="https://www.facebook.com/BenhVienDaKhoaNgaTuHo/?locale=vi_VN"><span class="cl_white"> Facebook của chúng tôi</span></a>
+                                            <a href="https://www.facebook.com/phongkhamlinhdam26bt1x2"><span class="cl_white"> Facebook của chúng tôi</span></a>
                                         </div>
                                     </div>
                                 </li>
-                                @*<li class="row">
-                                    <div class="col-sm-7 col-xs-12">
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Đà Nẵng
-
-                                    </div>
-                                    <div class="col-sm-5 col-xs-12">
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                                        <br>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                                    </div>
-                                </li>
-                                <li class="row">
-                                    <div class="col-sm-7 col-xs-12">
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        TP Hồ Chí Minh
-
-                                    </div>
-                                    <div class="col-sm-5 col-xs-12">
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                                        <br>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                                    </div>
-                                </li>*@
                             </ul>
-
                         </div>
                     </div>
                     <div class="footer-4 col-sm-3  col-xs-12">
                         <h3 class="widget-title  sz_16 mt_0 font_hel mb_0"><span>ĐƯỜNG DẪN NHANH</span></h3><div class="menu-footer_duong-dan-nhanh-container">
                             <ul id="menu-footer_duong-dan-nhanh" class="menu">
-                                <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="https://tamanhhospital.vn/danh-muc-khoa/chuyen-khoa/">Chuyên khoa</a></li>
-                                <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="https://tamanhhospital.vn/danh-muc-chuyen-gia/chuyen-gia/">Chuyên gia – bác sĩ</a></li>
-                                <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="https://tamanhhospital.vn/benh/">Chuyên mục bệnh học</a></li>
+                                <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="@Url.Action("Index", "TinTuc")">Tin tức</a></li>
+                                <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="@Url.Action("ChuyenGiaBacSi", "ChuyenGiaBacSi")">Chuyên gia – bác sĩ</a></li>
+                                <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="@Url.Action("Index", "Hoidap")">Hỏi đáp</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="div_footer mb_30 text-right  col-xs-12">
-                        <div class="widget_text item">
-                            <div class="textwidget custom-html-widget">
-                                <a href="https://www.dmca.com/Protection/Status.aspx?ID=d559761b-d67b-49db-a7b7-8e19686deb81&amp;refurl=https://tamanhhospital.vn/" rel="nofollow" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/DMCA_logo-grn-btn100w.png?ID=d559761b-d67b-49db-a7b7-8e19686deb81" alt="DMCA.com Protection Status"></a>
-                                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script><a class="logobct" target="_blank" style="max-width: 110px; display: inline-block;" href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=47919" rel="nofollow noopener noreferrer"><img class="img-responsive" src="~/Common/images/dathongbao.png"> </a> <a target="_blank" href="https://www.facebook.com/benhvientamanh" title="bv tâm anh fanpage" rel="noopener noreferrer"><img src="~/Common/images/i-facebook.png" alt="bv tâm anh facebook icon"></a> <a target="_blank" href="https://www.youtube.com/channel/UCpfNT4Shp-UJ8Dbzowm_YRQ/videos" title="" rel="noopener noreferrer"><img src="~/Common/images/i-youtube.png" alt="bv tâm anh youtube icon"></a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,53 +115,13 @@
                 <div id="header" class="bg_brand cl_white pt_10 pb_10 mb_center">
                     <div class="container">
                         <div class="row">
-                            <div style="background:white;top:10px; " class="div_logo header_left col-lg-2 col-sm-3 col-xs-12">
-                                <a>
-                                <img class="lazyload attachment-full size-full" alt="Bệnh viện đa khoa Ngã Tư Hồ" data-src="~/Common/images/logo_desk.png" src="/Common/images/logobenhvienngatuho.png" style="height:155px;width:253px;">
-                                </a>
-                            </div>
-                            <div class="header_right col-lg-10 col-sm-9 hidden-xs text-right">
-                                <div class="header_left mb_5 mt_0 item div_inline ">
-                                    @*<a rel="nofollow" href="https://tamanhhospital.vn/dang-ky-tiem-covid/">
-                                    <img class="lazyload" data-src="~/Common/images/dang-ky-tiem-covid-1.png" src="~/Common/images/dang-ky-tiem-covid-1.png"></a>*@
-                                    @*<a rel="nofollow" href="https://tamanhhospital.vn/dang-ky-xet-nghiem-ncovy/">
-                                    <img class="lazyload" data-src="~/Common/images/xncv.png" src="~/Common/images/xncv.png">
-                                    </a>*@
-                                    <a rel="nofollow" href="https://tamanhhospital.vn/phong-kham-online/">
-                                    <img class="lazyload" data-src="~/Common/images/icon-dang-dien-ra-1.png" src="~/Common/images/icon-dang-dien-ra-1.png">
-                                        </a>
-                                    <a rel="nofollow" href="https://tamanhhospital.vn/tra-gop-0-lai-suat-khi-su-dung-dich-vu-kham-chua-benh-dieu-tri-ivf-iui/">
-                                    <img class="lazyload" data-src="~/Common/images/i-tragop-e1647833423269-2.png" src="~/Common/images/i-tragop-e1647833423269-2.png">
-                                    </a>
-                                </div>
-                                @*<div class="header_top mb_5 mt_5 pull-right">
-                                    <a rel="" href="tel:0123456789"><img class="lazyload" data-src="~/Common/images/phone-hn.png" src="~/Common/images/sdt.png"></a>
-                                </div>*@
-                                <div class="header_footer pt_15">
-                                    @*<div class="pl_15 item"><span class="icon_img"><a rel="nofollow" target="_blank" href="https://360.tamanhhospital.vn"><img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_tour.png" src="~/Common/images/i_tour.png"></a>
-                                          </span><a rel="nofollow" target="_blank" href="https://360.tamanhhospital.vn"><span class="text cl_white">Tour ảo</span></a>
-                                        </div>*@<div class="pl_15 item"><span class="icon_img"><a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/">
-                                    <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_customer.png" src="~/Common/images/i_customer.png"></a>
-                                              </span><a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/">
-                                    <span class="text cl_white">Dành cho khách hàng</span>
-                                                  </a>
-                                            </div>
-                                    <div class="pl_15 item">
-                                    <span class="icon_img">
-                                        <a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/">
-                                        <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_faq.png" src="~/Common/images/i_faq.png"></a>
-                                        </span><a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/">
-                                        <span class="text cl_white">Hỏi đáp</span></a></div><div class="pl_15 item">
-                                    <span class="icon_img"><a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/">
-                                        <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_calendar.png" src="~/Common/images/i_calendar.png"></a>
-                                        </span><a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/"><span class="text cl_white">Đặt lịch khám</span></a>
-                                    </div>
-                                </div>
+                            <div style="background-color: rgb(16,46,158); top: 10px; " class="div_logo header_left col-lg-2 col-sm-3 col-xs-12">
+                                <a><img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;"></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container" color="blue">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -243,30 +129,12 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <style>
-                        ul#main-menu .sub-menu {
-                            color: blue;
-                        }
-
-                        ul#main-menu li:hover .nav navbar-nav {
-                            color: gray;
-                        }
-                    </style>
 
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav" id="main-menu">
 
-
-                            <ul style="list-style-type: none; padding: 0; margin: 0;">
-                                <li class="menu-item" style="position: relative;">
-                                    @Html.ActionLink("TRANG CHỦ", "Index", "Home", null, new { @class = "MauchuMenu" })
-                                    <ul class="submenu" style="display: none; position: absolute; top: 100%; left: 0; background-color: #f9f9f9; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); z-index: 1; width: 200px;">
-                                        <li><a href="#" style="display: block; padding: 10px; text-decoration: none; color: #000;">Giới thiệu</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink(" TRANG CHỦ ", "Index", "Home", null, new { @class = "MauchuMenu" })</li>
+                            <li>@Html.ActionLink(" GIỚI THIỆU ", "Gioithieu", "Home", null, new { @class = "MauchuMenu" })</li>
                             <li>@Html.ActionLink(" CHUYÊN GIA - BÁC SĨ", "ChuyenGiaBacSi", "ChuyenGiaBacSi", null, new { @class = "MauchuMenu" })</li>
                             <li>@Html.ActionLink(" TIN TỨC", "Index", "TinTuc", null, new { @class = "MauchuMenu" })</li>
                             <li>
@@ -277,7 +145,7 @@
                                     <li><a href="@Url.Action("Cauhoichoxuly", "Hoidap", new { id = u.mabn  })">CÂU HỎI CHỜ GIẢI ĐÁP</a></li>
                                     <li class="divider"></li>
                                     <li><a href="@Url.Action("ListAll", "Hoidap")">TẤT CẢ CÂU HỎI</a></li>
-                                    @*<li class="divider"></li>*@
+
                                 </ul>
                             <li>
 
@@ -314,7 +182,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="footer-1  col-sm-3 col-xs-12">
-                            <img width="253" height="155" src="~/Common/images/logobenhvienngatuho.png" class="image wp-image-12663  attachment-full size-full" alt="Bệnh viện đa khoa Tâm Anh" loading="lazy" style="max-width: 100%; height: auto;">
+                            <img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;">
                         </div>
                         <div class="footer-2  col-sm-6  col-xs-12">
                             <h3 class="widget-title sz_16 mt_0 font_hel mb_0"><span>HỆ THỐNG BỆNH VIỆN</span></h3><div class="textwidget custom-html-widget">
@@ -322,74 +190,34 @@
                                     <li class="row">
                                         <div class="col-sm-7 col-xs-12">
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            Số 5, bến Hồ, phường Hồ, Thuận Thành, Bắc Ninh
+                                            Ô 26 - BT1X2, Khu đô thị Bắc Linh Đàm, Hoàng Mai, Hà Nội
                                         </div>
                                         <div class="col-sm-5 col-xs-12">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <a href="tel:0868535115"><span class="cl_white">0868535115</span></a><br>
-                                            <a href="tel:0983745115"><span class="cl_white">0983745115</span></a><br>
-                                            <span class="small">làm việc từ 6h30 - 21h30</span>
+                                            <a href="tel:0866 816 115"><span class="cl_white">0866 816 115</span></a><br>
+                                            <span class="small">làm việc từ 7h30 - 19h30</span>
                                             <br>
                                             <div>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <a href="mailto:congtythietbiytekinhbac@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
+                                                <a href="mailto:phongkhamlinhdam@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
                                                 <br>
                                             </div>
                                             <div>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <a href="https://www.facebook.com/BenhVienDaKhoaNgaTuHo/?locale=vi_VN"><span class="cl_white"> Facebook của chúng tôi</span></a>
+                                                <a href="https://www.facebook.com/phongkhamlinhdam26bt1x2"><span class="cl_white"> Facebook của chúng tôi</span></a>
                                             </div>
                                         </div>
                                     </li>
-                                    @*<li class="row">
-                    <div class="col-sm-7 col-xs-12">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Đà Nẵng
-
-                    </div>
-                    <div class="col-sm-5 col-xs-12">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                        <br>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                    </div>
-                </li>
-                <li class="row">
-                    <div class="col-sm-7 col-xs-12">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        TP Hồ Chí Minh
-
-                    </div>
-                    <div class="col-sm-5 col-xs-12">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                        <br>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                    </div>
-                </li>*@
                                 </ul>
-
                             </div>
                         </div>
                         <div class="footer-4 col-sm-3  col-xs-12">
                             <h3 class="widget-title  sz_16 mt_0 font_hel mb_0"><span>ĐƯỜNG DẪN NHANH</span></h3><div class="menu-footer_duong-dan-nhanh-container">
                                 <ul id="menu-footer_duong-dan-nhanh" class="menu">
-                                    <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="https://tamanhhospital.vn/danh-muc-khoa/chuyen-khoa/">Chuyên khoa</a></li>
-                                    <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="https://tamanhhospital.vn/danh-muc-chuyen-gia/chuyen-gia/">Chuyên gia – bác sĩ</a></li>
-                                    <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="https://tamanhhospital.vn/benh/">Chuyên mục bệnh học</a></li>
+                                    <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="@Url.Action("Index", "TinTuc")">Tin tức</a></li>
+                                    <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="@Url.Action("ChuyenGiaBacSi", "ChuyenGiaBacSi")">Chuyên gia – bác sĩ</a></li>
+                                    <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="@Url.Action("Index", "Hoidap")">Hỏi đáp</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="div_footer mb_30 text-right  col-xs-12">
-                            <div class="widget_text item">
-                                <div class="textwidget custom-html-widget">
-                                    <a href="https://www.dmca.com/Protection/Status.aspx?ID=d559761b-d67b-49db-a7b7-8e19686deb81&amp;refurl=https://tamanhhospital.vn/" rel="nofollow" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/DMCA_logo-grn-btn100w.png?ID=d559761b-d67b-49db-a7b7-8e19686deb81" alt="DMCA.com Protection Status"></a>
-                                    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script><a class="logobct" target="_blank" style="max-width: 110px; display: inline-block;" href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=47919" rel="nofollow noopener noreferrer"><img class="img-responsive" src="~/Common/images/dathongbao.png"> </a> <a target="_blank" href="https://www.facebook.com/benhvientamanh" title="bv tâm anh fanpage" rel="noopener noreferrer"><img src="~/Common/images/i-facebook.png" alt="bv tâm anh facebook icon"></a> <a target="_blank" href="https://www.youtube.com/channel/UCpfNT4Shp-UJ8Dbzowm_YRQ/videos" title="" rel="noopener noreferrer"><img src="~/Common/images/i-youtube.png" alt="bv tâm anh youtube icon"></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -398,47 +226,12 @@
             </footer> }
         else
         {
-            <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:  #AAAAAA;">
+            <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #AAAAAA;">
                 <div id="header" class="bg_brand cl_white pt_10 pb_10 mb_center">
                     <div class="container">
                         <div class="row">
-                            <div style="background:white;top:10px; " class="div_logo header_left col-lg-2 col-sm-3 col-xs-12">
-                                <a><img class="lazyload" alt="Bệnh viện đa khoa Tâm Anh" data-src="~/Common/images/logo_desk.png" src="/Common/images/logobenhvienngatuho.png" style="height:155px;width:253px;"></a>
-                            </div>
-                            <div class="header_right col-lg-10 col-sm-9 hidden-xs text-right">
-                                <div class="header_left mb_5 mt_0 item div_inline ">
-                                    @*<a rel="nofollow" href="https://tamanhhospital.vn/dang-ky-tiem-covid/">
-                                    <img class="lazyload" data-src="~/Common/images/dang-ky-tiem-covid-1.png" src="~/Common/images/dang-ky-tiem-covid-1.png"></a>*@
-                                    @*<a rel="nofollow" href="https://tamanhhospital.vn/dang-ky-xet-nghiem-ncovy/">
-                                    <img class="lazyload" data-src="~/Common/images/xncv.png" src="~/Common/images/xncv.png"></a>*@
-                                    <a rel="nofollow" href="https://tamanhhospital.vn/phong-kham-online/">
-                                    <img class="lazyload" data-src="~/Common/images/icon-dang-dien-ra-1.png" src="~/Common/images/icon-dang-dien-ra-1.png"></a>
-                                    <a rel="nofollow" href="https://tamanhhospital.vn/tra-gop-0-lai-suat-khi-su-dung-dich-vu-kham-chua-benh-dieu-tri-ivf-iui/">
-                                    <img class="lazyload" data-src="~/Common/images/i-tragop-e1647833423269-2.png" src="~/Common/images/i-tragop-e1647833423269-2.png"></a>
-                                </div>
-                                @*<div class="header_top mb_5 mt_5 pull-right">
-                                    <a rel="" href="tel:0123456789"><img class="lazyload" data-src="~/Common/images/phone-hn.png" src="~/Common/images/sdt.png"></a>
-                                </div>*@
-                                <div class="header_footer pt_15">
-                                    <div class="pl_15 item">
-                                    @*<span class="icon_img"><a rel="nofollow" target="_blank" href="https://360.tamanhhospital.vn">
-                                        <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_tour.png" src="~/Common/images/i_tour.png"></a>
-                                          </span>
-                                    <a rel="nofollow" target="_blank" href="https://360.tamanhhospital.vn">
-                                        <span class="text cl_white">Tour ảo</span></a>*@
-                                        </div><div class="pl_15 item"><span class="icon_img"><a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/">
-                                    <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_customer.png" src="~/Common/images/i_customer.png"></a></span>
-                                    <a rel="nofollow" href="https://tamanhhospital.vn/danh-cho-khach-hang/">
-                                    <span class="text cl_white">Dành cho khách hàng</span></a>
-                                            </div>
-                                    <div class="pl_15 item">
-                                    <span class="icon_img"><a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/">
-                                        <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_faq.png" src="~/Common/images/i_faq.png"></a>
-                                        </span><a rel="" target="_blank" href="https://tamanhhospital.vn/chu-de-tu-van/tu-van/"><span class="text cl_white">Hỏi đáp</span></a>
-                                        </div><div class="pl_15 item"><span class="icon_img"><a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/">
-                                    <img class="lazyload" height="26" width="auto" data-src="~/Common/images/i_calendar.png" src="~/Common/images/i_calendar.png"></a></span>
-                                    <a rel="" href="https://tamanhhospital.vn/danh-cho-khach-hang/dat-lich-kham/"><span class="text cl_white">Đặt lịch khám</span></a></div>
-                                </div>
+                            <div style="background-color: rgb(16,46,158); top: 10px; " class="div_logo header_left col-lg-2 col-sm-3 col-xs-12">
+                                <a><img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;"></a>
                             </div>
                         </div>
                     </div>
@@ -451,19 +244,10 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <style>
-                        ul#main-menu .sub-menu {
-                            color: blue;
-                        }
-
-                        ul#main-menu li:hover .nav navbar-nav {
-                            color: gray;
-                        }
-                    </style>
 
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
 
+                        <ul class="nav navbar-nav">
                             <li>@Html.ActionLink(" TRANG CHỦ ", "Index", "Home", null, new { @class = "MauchuMenu" })</li>
                             <li>
                                 @Html.ActionLink("TRẢ LỜI CÂU HỎI", "Quanlyhoidap", "Bacsi")
@@ -511,7 +295,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="footer-1  col-sm-3 col-xs-12">
-                            <img width="253" height="155" src="~/Common/images/logobenhvienngatuho.png" class="image wp-image-12663  attachment-full size-full" alt="Bệnh viện đa khoa Tâm Anh" loading="lazy" style="max-width: 100%; height: auto;">
+                            <img width="253" height="155" src="~/images/images/logo.jpg" class="image wp-image-12663  attachment-full size-full" alt="Phòng khám Linh Đàm" loading="lazy" style="max-width: 100%; height: auto;">
                         </div>
                         <div class="footer-2  col-sm-6  col-xs-12">
                             <h3 class="widget-title sz_16 mt_0 font_hel mb_0"><span>HỆ THỐNG BỆNH VIỆN</span></h3><div class="textwidget custom-html-widget">
@@ -519,74 +303,34 @@
                                     <li class="row">
                                         <div class="col-sm-7 col-xs-12">
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            Số 5, bến Hồ, phường Hồ, Thuận Thành, Bắc Ninh
+                                            Ô 26 - BT1X2, Khu đô thị Bắc Linh Đàm, Hoàng Mai, Hà Nội
                                         </div>
                                         <div class="col-sm-5 col-xs-12">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <a href="tel:0868535115"><span class="cl_white">0868535115</span></a><br>
-                                            <a href="tel:0983745115"><span class="cl_white">0983745115</span></a><br>
-                                            <span class="small">làm việc từ 6h30 - 21h30</span>
+                                            <a href="tel:0866 816 115"><span class="cl_white">0866 816 115</span></a><br>
+                                            <span class="small">làm việc từ 7h30 - 19h30</span>
                                             <br>
                                             <div>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <a href="mailto:congtythietbiytekinhbac@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
+                                                <a href="mailto:phongkhamlinhdam@gmail.com"><span class="cl_white"> Mail cho chúng tôi</span></a><br>
                                                 <br>
                                             </div>
                                             <div>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <a href="https://www.facebook.com/BenhVienDaKhoaNgaTuHo/?locale=vi_VN"><span class="cl_white"> Facebook của chúng tôi</span></a>
+                                                <a href="https://www.facebook.com/phongkhamlinhdam26bt1x2"><span class="cl_white"> Facebook của chúng tôi</span></a>
                                             </div>
                                         </div>
                                     </li>
-                                    @*<li class="row">
-                    <div class="col-sm-7 col-xs-12">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Đà Nẵng
-
-                    </div>
-                    <div class="col-sm-5 col-xs-12">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                        <br>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                    </div>
-                </li>
-                <li class="row">
-                    <div class="col-sm-7 col-xs-12">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        TP Hồ Chí Minh
-
-                    </div>
-                    <div class="col-sm-5 col-xs-12">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <a href="tel:0123456789"><span class="cl_white"> 0123456789 </span></a>
-                        <span class="small">làm việc từ 6h30 - 21h30</span>
-                        <br>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:cskh@hcm.tahospital.vn"><span class="cl_white"> cskh@hcm.tahospital.vn</span></a>
-                    </div>
-                </li>*@
                                 </ul>
-
                             </div>
                         </div>
                         <div class="footer-4 col-sm-3  col-xs-12">
                             <h3 class="widget-title  sz_16 mt_0 font_hel mb_0"><span>ĐƯỜNG DẪN NHANH</span></h3><div class="menu-footer_duong-dan-nhanh-container">
                                 <ul id="menu-footer_duong-dan-nhanh" class="menu">
-                                    <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="https://tamanhhospital.vn/danh-muc-khoa/chuyen-khoa/">Chuyên khoa</a></li>
-                                    <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="https://tamanhhospital.vn/danh-muc-chuyen-gia/chuyen-gia/">Chuyên gia – bác sĩ</a></li>
-                                    <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="https://tamanhhospital.vn/benh/">Chuyên mục bệnh học</a></li>
+                                    <li id="menu-item-14754" class="menu-item menu-item-type-taxonomy menu-item-object-catkhoa menu-item-14754"><a href="@Url.Action("Index", "TinTuc")">Tin tức</a></li>
+                                    <li id="menu-item-14756" class="menu-item menu-item-type-taxonomy menu-item-object-catchuyengia menu-item-14756"><a href="@Url.Action("ChuyenGiaBacSi", "ChuyenGiaBacSi")">Chuyên gia – bác sĩ</a></li>
+                                    <li id="menu-item-15591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15591"><a href="@Url.Action("Index", "Hoidap")">Hỏi đáp</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="div_footer mb_30 text-right  col-xs-12">
-                            <div class="widget_text item">
-                                <div class="textwidget custom-html-widget">
-                                    <a href="https://www.dmca.com/Protection/Status.aspx?ID=d559761b-d67b-49db-a7b7-8e19686deb81&amp;refurl=https://tamanhhospital.vn/" rel="nofollow" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/DMCA_logo-grn-btn100w.png?ID=d559761b-d67b-49db-a7b7-8e19686deb81" alt="DMCA.com Protection Status"></a>
-                                    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script><a class="logobct" target="_blank" style="max-width: 110px; display: inline-block;" href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=47919" rel="nofollow noopener noreferrer"><img class="img-responsive" src="~/Common/images/dathongbao.png"> </a> <a target="_blank" href="https://www.facebook.com/benhvientamanh" title="bv tâm anh fanpage" rel="noopener noreferrer"><img src="~/Common/images/i-facebook.png" alt="bv tâm anh facebook icon"></a> <a target="_blank" href="https://www.youtube.com/channel/UCpfNT4Shp-UJ8Dbzowm_YRQ/videos" title="" rel="noopener noreferrer"><img src="~/Common/images/i-youtube.png" alt="bv tâm anh youtube icon"></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -602,11 +346,11 @@
     @RenderSection("scripts", required: false)
 
 </body>
-</html>
 <style>
     .navbar-nav .dropdown {
         position: relative;
     }
+
     .navbar-nav {
         display: flex;
         justify-content: space-between; /* Điều chỉnh khoảng cách */
@@ -643,3 +387,4 @@
             background-color: #f1f1f1;
         }
 </style>
+</html>
