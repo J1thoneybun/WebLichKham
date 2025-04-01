@@ -232,7 +232,18 @@
                     $(this).val("");
                     return;
                 }
-
+                     $('input[name=hinhthuc]').change(function () {
+         $('select[name=khoa]').val("");
+         $('select[name=bacsi]').empty().append('<option value="">-- Chọn bác sĩ --</option>');
+         $('select[name=ngaykham]').empty().append('<option value="">-- Chọn ngày khám --</option>');
+         $('select[name=cakham]').empty().append('<option value="">-- Chọn ca khám --</option>');
+    return;
+});
+     if (!hinhthuc) {
+         alert("Vui lòng chọn loại dịch vụ khám trước!");
+         $(this).val("");
+         return;
+     }
                 if (!khoa) {
                     $('select[name=bacsi]').empty().append('<option value="">-- Chọn bác sĩ --</option>');
                     $('select[name=ngaykham]').empty().append('<option value="">-- Chọn ngày khám --</option>');
